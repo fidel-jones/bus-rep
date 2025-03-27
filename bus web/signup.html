@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Eco Commute</title>
+  <link rel="stylesheet" href="style.css"> 
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    .success {
+      color: green;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Eco Commute</h1>
+      <p>Your Comfort, Our Priority</p>
+      <nav>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="signup-section">
+      <h2>Create Your Account</h2>
+      <form class="signup-form" id="signupForm" onsubmit="return handleSubmit(event)">
+        <label for="Username">Username:</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+        <div id="nameError" class="error"></div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <div id="emailError" class="error"></div>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <div id="passwordError" class="error"></div>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+        <div id="confirmPasswordError" class="error"></div>
+
+        <button type="submit">Sign Up</button>
+
+        <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
+      </form>
+    </div>
+  </div>
+  <script src="all.js"></script>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Get form values
+      const fullName = document.getElementById('full-name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      // Simple validation (you'd replace this with proper registration logic)
+      if (fullName && email && password && confirmPassword) {
+        if (password === confirmPassword) {
+          alert('Sign up successful!'); // Notify the user of successful sign-up
+          // Redirect to login page after a short delay
+          setTimeout(function() {
+            window.location.href = 'login.html'; // Redirect to login page
+          }, 1000); // 1 second delay
+        } else {
+          alert('Passwords do not match. Please try again.');
+        }
+      } else {
+        alert('Please fill in all fields.');
+      }
+    }
+  </script>
+</body>
+</html>

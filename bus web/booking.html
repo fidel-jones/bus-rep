@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Eco Commute</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Eco Commute</h1>
+      <p>Your Comfort, Our Priority</p>
+      <nav>
+        <ul>
+         <li><a href="home.html">Home</a></li>
+        <li><a href="parents.html">Parents</a></li>
+        <li><a href="staff.html"> Staff</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="booking-section">
+      <h2>Book Your Trip</h2>
+      <form class="booking-form">
+        <div class="travel-type">
+          <label>
+            <input type="radio" name="travel-type" value="one-way" checked> One Way
+          </label>
+          <label>
+            <input type="radio" name="travel-type" value="two-way"> Two Way
+          </label>
+        </div>
+
+        <label for="current-location">Current Location:</label>
+        <select id="current-location" name="current-location">
+          <option value="nairobi">Nairobi</option>
+          <option value="kisumu">Kisumu</option>
+          <option value="mombasa">Mombasa</option>
+          <option value="nakuru">Nakuru</option>
+        </select>
+
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination">
+          <option value="nairobi">Nairobi</option>
+          <option value="kisumu">Kisumu</option>
+          <option value="mombasa">Mombasa</option>
+          <option value="nakuru">Nakuru</option>
+        </select>
+
+        <label for="travel-date">Travel Date:</label>
+        <input type="date" id="travel-date" name="travel-date">
+
+        <button type="submit">Search Buses</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
